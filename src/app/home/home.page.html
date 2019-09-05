@@ -1,0 +1,55 @@
+<ion-header padding>
+    <ion-toolbar color="sucess">
+        <ion-icon name="navigate"></ion-icon>
+        <span style="font-size: 14px;" (click)="getUserLocation()">
+            {{ locationname }}
+        </span>
+      <ion-icon name="cart" slot="end">
+          <ion-badge color="danger">5</ion-badge>
+        </ion-icon>    
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>
+    <ion-slides #slides [options]="sliderConfig">
+      <ion-slide *ngFor="let s of offers"> 
+          <img src="{{s.imgpath}}" />
+      </ion-slide>
+    </ion-slides>
+
+    <!-- Searchbar with cancel button always shown -->
+    <ion-searchbar animated placeholder="search for restaurant"></ion-searchbar>
+
+
+    <ion-item *ngFor="let item of product" (click)="presentModal(item.restaurant.photos)">
+      <ion-avatar slot="start">
+        <img src="{{item.restaurant.featured_image}}" />
+      </ion-avatar>
+      
+      <ion-label>
+        <h2>{{ item.restaurant.name }}</h2>
+        <h3>{{ item.restaurant.location.address }}</h3>
+        <h4>{{ item.restaurant.timings }}</h4>
+       <ion-grid>
+         <ion-row>
+           <ion-col size="4">
+             <h4>* {{ item.restaurant.user_rating.aggregate_rating }}</h4>
+           </ion-col>
+           <ion-col size="4">
+             <h4>{{ 24 }} mins</h4>
+           </ion-col>
+           <ion-col size="4">
+           <h4> {{ item.restaurant.average_cost_for_two}} for two</h4>
+          </ion-col>
+         </ion-row>
+       </ion-grid>
+      </ion-label>
+    </ion-item>
+</ion-content>

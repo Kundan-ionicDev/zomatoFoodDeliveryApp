@@ -1,0 +1,50 @@
+<!-- <div class="widget_wrap" style="width:100%;height:100%;display:inline-block;">
+    <iframe src="https://www.zomato.com/widgets/all_collections.php?city_id=3&language_id=1&theme=dark&widgetType=large" 
+    style="position:relative;width:100%;height:100%;" border="0" frameborder="0"></iframe></div> -->
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+        <ion-back-button defaultHref="home"></ion-back-button>
+            
+        </ion-buttons>
+        Search
+    </ion-toolbar>
+</ion-header>
+      
+<ion-content>
+    <!-- Searchbar with cancel button always shown -->
+    <ion-searchbar animated placeholder="search for restaurant, receipe etc"></ion-searchbar>
+
+    <ion-slides #slides [options]="sliderConfig">
+        <ion-slide *ngFor="let s of categories"> 
+            <ion-button shape="round" type="submit" color="primary">{{ s.categories.name }}</ion-button>
+        </ion-slide>
+    </ion-slides>
+      
+
+    <ion-item *ngFor="let item of data">
+        <ion-avatar slot="start">
+            <img src="{{item.restaurant.featured_image}}" />
+        </ion-avatar>
+        
+        <ion-label>
+            <h2>{{ item.restaurant.name }}</h2>
+            <h3>{{ item.restaurant.location.address }}</h3>
+            <h4>{{ item.restaurant.timings }}</h4>
+            <ion-grid>
+            <ion-row>
+                <ion-col size="4">
+                <h4>* {{ item.restaurant.user_rating.aggregate_rating }}</h4>
+                </ion-col>
+                <ion-col size="4">
+                <h4>{{ 24 }} mins</h4>
+                </ion-col>
+                <ion-col size="4">
+                <h4> {{ item.restaurant.average_cost_for_two}} for two</h4>
+            </ion-col>
+            </ion-row>
+            </ion-grid>
+        </ion-label>
+    </ion-item>
+
+</ion-content>

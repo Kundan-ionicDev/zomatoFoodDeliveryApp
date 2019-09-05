@@ -1,0 +1,38 @@
+  <!-- <ion-content>
+    <div class="login-container">
+      <img class="logo" src="../../assets/icon/icon.png" />
+        <strong>Welcome to Food Eats</strong>
+        <div>Find restaurants, Make orders & get delivered quickly.</div>
+        <ion-item>
+          <ion-input type="email" placeholder="Enter Mobile number"></ion-input>
+        </ion-item>
+        <ion-button color="primary" expand="block" >Continue</ion-button>
+        <a (click)="googleLogin()" color="primary">Login with google</a>
+        <p (click)="openResetPassword()"><strong>Forgot your password?</strong></p>
+    </div>
+  </ion-content>
+   -->
+
+   <ion-content padding>
+    <div text-center style="padding-top: 70px;">
+      <img class="logo" src="../../assets/icon/icon.png" alt="Logo of clean connect">
+    </div>
+    <div style="text-align:center;">
+      <strong>Welcome to Food Eats</strong>
+    <div>Find restaurants, Make orders & get delivered quickly.</div>
+    </div>
+      <ion-list>  
+        <ion-item lines="none">
+          <ion-label><ion-icon name="ios-person-outline" item-left></ion-icon></ion-label>
+          <ion-icon name="md-call"></ion-icon>
+          <ion-input type="tel" placeholder="Mobile number"></ion-input>
+        </ion-item>
+      </ion-list>
+      <br/>
+      <div style="text-align:center;">
+        <ion-button shape="round" type="submit" color="primary" (click)="Continue()" expand="block">Continue</ion-button>
+        <ion-button shape="round" type="submit" color="success" (click)="googleLogin()" expand="block">Login with google</ion-button>
+        <!-- <a (click)="googleLogin()" color="primary">Login with google</a> -->
+      </div>
+       
+  </ion-content>

@@ -1,0 +1,76 @@
+ion-toolbar {
+    // TODO test transparent and fullscreen
+    --background: transparent;
+    --border-color: transparent;
+  }
+  ion-content .scroll { height: 100%; }
+  
+  .md,
+  .ios,
+  .wp {
+      .swiper-slide .swiper-slide-active{
+         width: 100px;//your width here
+     }
+   }
+  .slider-pager-page
+  {
+    color: white;
+    fill: #f90;
+    stroke: red;
+    background-color: blue;
+  }
+  .slider-pager-page.active
+  {
+    fill: #f90;
+    stroke: red;
+    color: blue;
+    background-color: red;
+  }
+  
+  .swiper-slide {
+    display: block;
+  }
+  
+  .slide-image {
+    max-height: 50%;
+    max-width: 60%;
+    margin: 36px 0;
+  }
+  
+  b {
+    font-weight: 500;
+  }
+  
+  p {
+    padding: 0 40px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #60646b;
+  
+    b {
+      color: #000000;
+    }
+  }
+  
+  
+  .slider{
+    height:100vh;
+    width:auto; 
+  }
+  
+  .slider-slide {
+    height: 100vh;
+    width: auto;
+  }
+  
+  .button-save {
+    position: absolute;
+    bottom: 15%;
+    left: 0px;
+    right: 0px;
+    margin: 0px 20px;
+    background: #1aad19;
+    border-radius: 20px;
+  }
+
+  

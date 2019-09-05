@@ -1,0 +1,31 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>otp</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content padding>
+ 
+<ion-grid>
+  
+  <ion-row justify-content-center align-items-center style="padding-top: 50%;">
+      <h3>Verification code send to your mobile number</h3>
+    <ion-col size="3">
+      <ion-input placeholder="*" maxlength="1" tabindex="1" (keyup)="moveFocus(b)"  style="border-bottom: 1px solid #cccccc" type="tel"></ion-input>
+    </ion-col>
+    <ion-col size="3">
+      <ion-input placeholder="*" maxlength="1"  tabindex="2" #b (keyup)="moveFocus(c)"  style="border-bottom: 1px solid #cccccc" type="tel"></ion-input>
+    </ion-col>
+
+    <ion-col size="3">
+      <ion-input placeholder="*" maxlength="1"  tabindex="3" #c (keyup)="moveFocus(d)"  style="border-bottom: 1px solid #cccccc" type="tel"></ion-input>
+    </ion-col>
+
+    <ion-col size="3">
+      <ion-input  placeholder="*" maxlength="1"  tabindex="4" #d style="border-bottom: 1px solid #cccccc" type="tel"></ion-input>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<ion-button shape="round" type="submit" color="primary" (click)="VerifyOtp()" expand="block">Verify</ion-button>
+<a >Don't receive the OTP? Resend</a>
+</ion-content>

@@ -1,0 +1,31 @@
+.item-inner{
+    border-bottom: none !important;
+}
+.imgHeight{
+    height: 250px;
+}
+.foodie{
+    margin-top: 10px;
+}
+
+ion-avatar,
+ion-avatar > img{
+    border-radius:6%;
+    height:5rem;
+    width:5rem;
+}
+
+.red:before {
+    color: red;
+    }
+
+    .green:before {
+    color: green;
+    }
+
+    .flex_row {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row; 
+    flex-direction: row;
+    }

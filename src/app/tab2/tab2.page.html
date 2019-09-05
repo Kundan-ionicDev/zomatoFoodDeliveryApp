@@ -1,0 +1,72 @@
+<ion-header>
+		<ion-toolbar>
+		  <ion-buttons slot="start">
+			<ion-back-button defaultHref="home"></ion-back-button>
+			  
+		  </ion-buttons>
+		  Cart
+		</ion-toolbar>
+	  </ion-header>
+<ion-content padding>
+	<ion-item>
+		<ion-avatar slot="start">
+			<img src="../../assets/fk/Martabak.jpg" />
+		</ion-avatar>
+		<ion-label>
+			<h2>Chicken Martabak</h2>
+			<h3 style="color:grey;">Chicken , spicy and garlic</h3>
+			<ion-grid>
+				<ion-row>
+					<ion-col size="4">
+						<ion-icon name="md-add"></ion-icon>
+					</ion-col>
+					<ion-col size="4">
+						Rs. 481
+					</ion-col>
+					<ion-col size="4">
+						<ion-icon name="md-remove"></ion-icon>
+					</ion-col>
+				</ion-row>
+		   </ion-grid>
+		</ion-label>
+	</ion-item>
+	<ion-item>
+			<ion-avatar slot="start">
+				<img src="../../assets/fk/chickenCrisphy.jpg" />
+			</ion-avatar>
+			<ion-label>
+				<h2>Chicken Crisphy</h2>
+				<h3 style="color:grey;">Chicken , spicy and garlic</h3>
+				<ion-grid>
+					<ion-row>
+						<ion-col size="3">
+							<ion-icon name="md-add"></ion-icon>
+						</ion-col>
+						<ion-col size="3">
+							Rs. 400 &nbsp;&nbsp;
+						</ion-col>
+						<ion-col size="4">
+							<ion-icon name="md-remove"></ion-icon>
+						</ion-col>
+					</ion-row>
+			   </ion-grid>
+			</ion-label>
+		</ion-item>
+
+		
+
+		<ion-grid>
+				<ion-row>
+					<ion-col size="4">
+						<ion-icon name="basket"></ion-icon>
+					</ion-col>
+					<ion-col size="4">
+						Quantity 2
+					</ion-col>
+					<ion-col size="4">
+						Total <b>Rs. 881</b>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+			<ion-button expand="full" (click)="payWithRazor()">Checkout and Pay</ion-button>
+</ion-content>

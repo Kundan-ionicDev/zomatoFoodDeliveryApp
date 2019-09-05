@@ -1,0 +1,58 @@
+<!-- <ion-header>
+  <ion-toolbar>
+      <ion-buttons (click)="close()" style="margin-left: 17px;" end float-left color="primary">Back</ion-buttons>
+    <ion-title text-center>Details</ion-title>
+  </ion-toolbar>
+  
+</ion-header> -->
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="home"></ion-back-button>
+          
+      </ion-buttons>
+      Menu
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+    <!-- <ion-card *ngFor="let item of userData">
+        <img class="imgHeight" src="{{item.photo.thumb_url}}" />
+        <ion-card-content>
+            <ion-item>
+                <ion-avatar slot="start">
+                  <img src="{{item.photo.user.profile_image}}">
+                </ion-avatar>
+                <ion-label [innerHTML]="item.photo.user.name"></ion-label>
+              </ion-item>
+           <div class="foodie"> foodie level : <span [innerHTML]="item.photo.user.foodie_level"></span></div>
+           
+          <div class="foodie"> foodie level : <span [innerHTML]="item.photo.user.foodie_level_num"></span></div>
+        </ion-card-content>
+      </ion-card> -->
+      <ion-item *ngFor="let item of menuitems">
+        <ion-avatar slot="start">
+          <img src="{{item.image}}" />
+        </ion-avatar>
+          
+        <ion-label>
+          <h2>{{ item.name }}</h2>
+          <h3>Price : {{ item.price }}</h3>
+          <h4>Available :{{ item.available }}</h4>
+        </ion-label>
+        <ion-grid>
+            <ion-row>
+              <ion-col size="6">
+                  <div class="flex_row">
+                      <p ng-click="sub(item)" >
+                        <span><ion-icon name="md-add"></ion-icon></span>
+                      </p>
+                      &nbsp;<p> {{item.price}} </p>&nbsp;
+                      <p ng-click="add(item)">
+                          <span><ion-icon name="md-remove"></ion-icon></span>
+                      </p>
+                    </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-item>
+</ion-content>
