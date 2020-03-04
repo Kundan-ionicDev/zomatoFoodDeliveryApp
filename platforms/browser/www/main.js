@@ -464,6 +464,10 @@ var map = {
 		"./src/app/onboaring/onboaring.module.ts",
 		"onboaring-onboaring-module"
 	],
+	"./otp/otp.module": [
+		"./src/app/otp/otp.module.ts",
+		"otp-otp-module"
+	],
 	"./tabs/tabs.module": [
 		"./src/app/tabs/tabs.module.ts",
 		"tabs-tabs-module"
@@ -512,7 +516,8 @@ var routes = [
     // { path: 'phot-modal', loadChildren: './phot-modal/phot-modal.module#PhotModalPageModule' },
     { path: 'detail', loadChildren: './detail/detail.module#DetailPageModule' },
     { path: 'onboaring', loadChildren: './onboaring/onboaring.module#OnboaringPageModule' },
-    { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' }
+    { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
+    { path: 'otp', loadChildren: './otp/otp.module#OtpPageModule' }
     // { path: 'autocomplete', loadChildren: './autocomplete/autocomplete.module#AutocompletePageModule' }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -686,7 +691,7 @@ var AppModule = /** @class */ (function () {
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(),
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
-                ionic4_rating__WEBPACK_IMPORTED_MODULE_12__["IonicRatingModule"]
+                ionic4_rating__WEBPACK_IMPORTED_MODULE_12__["IonicRatingModule"],
             ],
             providers: [
                 _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
@@ -746,16 +751,26 @@ var CommonService = /** @class */ (function () {
             headers: this.httpHeaders
         };
         // public url="https://developers.zomato.com/api/v2.1/search?lat=19.116197&lon=72.871237";
-        this.url = "https://developers.zomato.com/api/v2.1/geocode?";
+        this.url = "https://developers.zomato.com/api/v2.1/";
+        this._geocoder = "geocode?";
+        this._search = "search?";
+        this._categories = "categories";
+        this._cuisines = "cuisines?";
     }
     CommonService.prototype.getData = function (latitude, longitude) {
-        return this.http.post(this.url + 'lat=' + latitude + '&lon=' + longitude, null, this.options);
+        return this.http.post(this.url + this._geocoder + 'lat=' + latitude + '&lon=' + longitude, null, this.options);
     };
     CommonService.prototype.getMenu = function () {
         return this.http.get('assets/DB/import.json', this.options);
     };
     CommonService.prototype.getcategories = function () {
-        return this.http.post('https://developers.zomato.com/api/v2.1/categories', null, this.options);
+        return this.http.post(this.url + this._categories, null, this.options);
+    };
+    CommonService.prototype.getSearchResults = function (latitude, longitude, keyword) {
+        return this.http.post(this.url + this._search + 'q=' + keyword + '&lat=' + latitude + '&lon=' + longitude + '&sort=real_distance&order=desc', null, this.options);
+    };
+    CommonService.prototype.getcuisines = function (latitude, longitude) {
+        return this.http.post(this.url + this._cuisines + 'lat=' + latitude + '&lon=' + longitude, null, this.options);
     };
     CommonService.prototype.showLoading = function (msg) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
@@ -786,7 +801,8 @@ var CommonService = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
             providedIn: 'root'
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"]])
     ], CommonService);
     return CommonService;
 }());

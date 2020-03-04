@@ -89,6 +89,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var AccountPage = /** @class */ (function () {
     function AccountPage() {
+        this.logindetails = localStorage.getItem("logindata");
+        alert('logindetails' + JSON.stringify(this.logindetails));
     }
     AccountPage.prototype.ngOnInit = function () {
     };

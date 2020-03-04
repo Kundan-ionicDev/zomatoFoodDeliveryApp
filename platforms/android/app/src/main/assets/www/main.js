@@ -662,6 +662,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ "./node_modules/@ionic-native/geolocation/ngx/index.js");
 /* harmony import */ var _ionic_native_location_accuracy_ngx__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ionic-native/location-accuracy/ngx */ "./node_modules/@ionic-native/location-accuracy/ngx/index.js");
 /* harmony import */ var _ionic_native_native_geocoder_ngx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ionic-native/native-geocoder/ngx */ "./node_modules/@ionic-native/native-geocoder/ngx/index.js");
+/* harmony import */ var _ionic_native_facebook_ngx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ionic-native/facebook/ngx */ "./node_modules/@ionic-native/facebook/ngx/index.js");
+
 
 
 
@@ -701,6 +703,7 @@ var AppModule = /** @class */ (function () {
                 _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_14__["Geolocation"],
                 _ionic_native_native_geocoder_ngx__WEBPACK_IMPORTED_MODULE_16__["NativeGeocoder"],
                 _ionic_native_location_accuracy_ngx__WEBPACK_IMPORTED_MODULE_15__["LocationAccuracy"],
+                _ionic_native_facebook_ngx__WEBPACK_IMPORTED_MODULE_17__["Facebook"],
                 { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] },
                 _common_service__WEBPACK_IMPORTED_MODULE_10__["CommonService"]
             ],
@@ -767,7 +770,7 @@ var CommonService = /** @class */ (function () {
         return this.http.post(this.url + this._categories, null, this.options);
     };
     CommonService.prototype.getSearchResults = function (latitude, longitude, keyword) {
-        return this.http.post(this.url + this._search + 'q=' + keyword + '&lat=' + latitude + '&lon=' + longitude + '&sort=real_distance&order=desc', null, this.options);
+        return this.http.post(this.url + this._search + 'q=' + keyword + '&lat=19.116197&lon=72.871237' + '&sort=real_distance&order=desc', null, this.options);
     };
     CommonService.prototype.getcuisines = function (latitude, longitude) {
         return this.http.post(this.url + this._cuisines + 'lat=' + latitude + '&lon=' + longitude, null, this.options);
@@ -872,7 +875,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/kundan/Documents/test01/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/kundan/Projects/mystuff/zomatoFoodDeliveryApp/src/main.ts */"./src/main.ts");
 
 
 /***/ })

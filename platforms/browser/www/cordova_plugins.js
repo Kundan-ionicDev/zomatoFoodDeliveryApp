@@ -113,6 +113,14 @@ module.exports = [
         "id": "com.razorpay.cordova.CheckoutProxy",
         "pluginId": "com.razorpay.cordova",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-facebook4/www/facebook-browser.js",
+        "id": "cordova-plugin-facebook4.FacebookConnectPluginBrowser",
+        "pluginId": "cordova-plugin-facebook4",
+        "clobbers": [
+            "facebookConnectPlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -130,7 +138,8 @@ module.exports.metadata =
     "cordova-plugin-android-permissions": "1.0.0",
     "cordova-plugin-request-location-accuracy": "2.3.0",
     "cordova-plugin-nativegeocoder": "3.2.2",
-    "com.razorpay.cordova": "0.16.1"
+    "com.razorpay.cordova": "0.16.1",
+    "cordova-plugin-facebook4": "6.0.0"
 }
 // BOTTOM OF METADATA
 });

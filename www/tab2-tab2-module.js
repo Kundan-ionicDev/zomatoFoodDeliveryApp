@@ -69,7 +69,7 @@ module.exports = "<ion-header>\n\t\t<ion-toolbar>\n\t\t  <ion-buttons slot=\"sta
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-avatar,\nion-avatar > img {\n  border-radius: 6%;\n  height: 8rem;\n  width: 8rem; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9rdW5kYW4vRG9jdW1lbnRzL3Rlc3QwMS9zcmMvYXBwL3RhYjIvdGFiMi5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0VBRUksaUJBQWdCO0VBQ2hCLFlBQVc7RUFDWCxXQUFVLEVBQUEiLCJmaWxlIjoic3JjL2FwcC90YWIyL3RhYjIucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWF2YXRhcixcbmlvbi1hdmF0YXIgPiBpbWd7XG4gICAgYm9yZGVyLXJhZGl1czo2JTtcbiAgICBoZWlnaHQ6OHJlbTtcbiAgICB3aWR0aDo4cmVtO1xufSJdfQ== */"
+module.exports = "ion-avatar,\nion-avatar > img {\n  border-radius: 6%;\n  height: 8rem;\n  width: 8rem; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9rdW5kYW4vUHJvamVjdHMvbXlzdHVmZi96b21hdG9Gb29kRGVsaXZlcnlBcHAvc3JjL2FwcC90YWIyL3RhYjIucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztFQUVJLGlCQUFnQjtFQUNoQixZQUFXO0VBQ1gsV0FBVSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvdGFiMi90YWIyLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1hdmF0YXIsXG5pb24tYXZhdGFyID4gaW1ne1xuICAgIGJvcmRlci1yYWRpdXM6NiU7XG4gICAgaGVpZ2h0OjhyZW07XG4gICAgd2lkdGg6OHJlbTtcbn0iXX0= */"
 
 /***/ }),
 

@@ -27,6 +27,38 @@
             {
               "xml": "<feature name=\"Checkout\"><param name=\"browser-package\" value=\"Checkout\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"FacebookConnectPlugin\"><param name=\"browser-package\" value=\"FacebookConnectPluginBrowser\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<plugin name=\"FacebookConnectPlugin\" value=\"FacebookConnectPlugin\" />",
+              "count": 1
+            },
+            {
+              "xml": "<access origin=\"https://m.facebook.com\" />",
+              "count": 1
+            },
+            {
+              "xml": "<access origin=\"https://connect.facebook.net\" />",
+              "count": 1
+            },
+            {
+              "xml": "<access origin=\"https://graph.facebook.com\" />",
+              "count": 1
+            },
+            {
+              "xml": "<access origin=\"https://api.facebook.com\" />",
+              "count": 1
+            },
+            {
+              "xml": "<access origin=\"https://*.fbcdn.net\" />",
+              "count": 1
+            },
+            {
+              "xml": "<access origin=\"https://*.akamaihd.net\" />",
+              "count": 1
             }
           ]
         }
@@ -72,6 +104,13 @@
       "PACKAGE_NAME": "com.kundans.homelyfoodPG"
     },
     "com.razorpay.cordova": {
+      "PACKAGE_NAME": "com.kundans.homelyfoodPG"
+    },
+    "cordova-plugin-facebook4": {
+      "APP_ID": "466141547574846",
+      "APP_NAME": "zomato",
+      "FACEBOOK_HYBRID_APP_EVENTS": "false",
+      "FACEBOOK_ANDROID_SDK_VERSION": "5.2.0",
       "PACKAGE_NAME": "com.kundans.homelyfoodPG"
     }
   },
@@ -190,6 +229,14 @@
       "id": "com.razorpay.cordova.CheckoutProxy",
       "pluginId": "com.razorpay.cordova",
       "runs": true
+    },
+    {
+      "file": "plugins/cordova-plugin-facebook4/www/facebook-browser.js",
+      "id": "cordova-plugin-facebook4.FacebookConnectPluginBrowser",
+      "pluginId": "cordova-plugin-facebook4",
+      "clobbers": [
+        "facebookConnectPlugin"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -205,6 +252,7 @@
     "cordova-plugin-android-permissions": "1.0.0",
     "cordova-plugin-request-location-accuracy": "2.3.0",
     "cordova-plugin-nativegeocoder": "3.2.2",
-    "com.razorpay.cordova": "0.16.1"
+    "com.razorpay.cordova": "0.16.1",
+    "cordova-plugin-facebook4": "6.0.0"
   }
 }

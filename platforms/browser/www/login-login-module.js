@@ -151,7 +151,8 @@ var LoginPage = /** @class */ (function () {
         };
         // this.router.navigate(['/tabs'], navigationExtras);
         // this.router.navigate(['/tabs/tabs/home'], navigationExtras);
-        this.router.navigateByUrl('/tabs/tabs/home');
+        // this.router.navigateByUrl('/tabs/tabs/home');
+        this.router.navigateByUrl('otp');
     };
     LoginPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

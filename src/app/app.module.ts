@@ -18,6 +18,8 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+import { Facebook } from '@ionic-native/facebook/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,6 +40,7 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
     Geolocation,
     NativeGeocoder,
     LocationAccuracy,
+    Facebook,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     CommonService
   ],

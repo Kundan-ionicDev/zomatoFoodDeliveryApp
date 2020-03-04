@@ -58,7 +58,7 @@ var Tab1PageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"widget_wrap\" style=\"width:100%;height:100%;display:inline-block;\">\n    <iframe src=\"https://www.zomato.com/widgets/all_collections.php?city_id=3&language_id=1&theme=dark&widgetType=large\" \n    style=\"position:relative;width:100%;height:100%;\" border=\"0\" frameborder=\"0\"></iframe></div>"
+module.exports = "<!-- <div class=\"widget_wrap\" style=\"width:100%;height:100%;display:inline-block;\">\n    <iframe src=\"https://www.zomato.com/widgets/all_collections.php?city_id=3&language_id=1&theme=dark&widgetType=large\" \n    style=\"position:relative;width:100%;height:100%;\" border=\"0\" frameborder=\"0\"></iframe></div> -->\n<ion-header>\n    <ion-toolbar>\n        <ion-buttons slot=\"start\">\n        <ion-back-button defaultHref=\"home\"></ion-back-button>\n            \n        </ion-buttons>\n        Search\n    </ion-toolbar>\n</ion-header>\n      \n<ion-content>\n    <!-- Searchbar with cancel button always shown -->\n    <ion-searchbar animated placeholder=\"search for restaurant, receipe etc\"></ion-searchbar>\n\n    <ion-slides #slides [options]=\"sliderConfig\">\n        <ion-slide *ngFor=\"let s of categories\"> \n            <ion-button shape=\"round\" type=\"submit\" color=\"primary\">{{ s.categories.name }}</ion-button>\n        </ion-slide>\n    </ion-slides>\n      \n\n    <ion-item *ngFor=\"let item of searchresults\">\n        <ion-avatar slot=\"start\">\n            <img src=\"{{item.restaurants.featured_image}}\" />\n        </ion-avatar>\n        \n        <ion-label>\n            <h2>{{ item.restaurants.name }}</h2>\n            <h3>{{ item.restaurants.location.address }}</h3>\n            <h4>{{ item.restaurants.timings }}</h4>\n            <ion-grid>\n            <ion-row>\n                <ion-col size=\"4\">\n                <h4>* {{ item.restaurants.user_rating.aggregate_rating }}</h4>\n                </ion-col>\n                <ion-col size=\"4\">\n                <h4>{{ 24 }} mins</h4>\n                </ion-col>\n                <ion-col size=\"4\">\n                <h4> {{ item.restaurants.average_cost_for_two}} for two</h4>\n            </ion-col>\n            </ion-row>\n            </ion-grid>\n        </ion-label>\n    </ion-item>\n\n</ion-content>"
 
 /***/ }),
 
@@ -86,6 +86,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _common_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common.service */ "./src/app/common.service.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+
 
 
 
@@ -93,17 +95,45 @@ var Tab1Page = /** @class */ (function () {
     function Tab1Page(commonservice) {
         this.commonservice = commonservice;
         this.categories = [];
+        this.sliderConfig = {
+            autoplay: false,
+            pages: true,
+            zoom: {
+                maxRatio: 4
+            },
+            slidesPerView: 2.9,
+            spaceBetween: 2,
+            centeredSlides: false
+        };
+        this.getcategories();
+        alert('Latitude :' + this.commonservice.latitude + 'Longitude :' + this.commonservice.longitude);
+        this.getSearchResults(this.commonservice.latitude, this.commonservice.longitude);
     }
     Tab1Page.prototype.ngOnInit = function () {
+        // this.geocode = localStorage.getItem('geocode');
     };
     Tab1Page.prototype.getcategories = function () {
         var _this = this;
-        // this.commonservice.showLoading("please wait");
+        this.commonservice.showLoading("please wait");
         this.commonservice.getcategories().subscribe(function (success) {
             _this.categories = success.categories;
             _this.commonservice.dismissLoading();
         });
     };
+    Tab1Page.prototype.getSearchResults = function (latitude, longitude) {
+        var _this = this;
+        alert('Latitude Longitude  ::' + latitude + longitude);
+        this.commonservice.showLoading("please wait");
+        this.commonservice.getSearchResults(latitude, longitude, 'Chinese').subscribe(function (success) {
+            _this.searchresults = success;
+            alert('this.searchresults' + JSON.stringify(_this.searchresults));
+            _this.commonservice.dismissLoading();
+        });
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('slides'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonSlides"])
+    ], Tab1Page.prototype, "slides", void 0);
     Tab1Page = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-tab1',
